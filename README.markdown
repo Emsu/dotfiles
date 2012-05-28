@@ -5,4 +5,4 @@ README
   > gconftool-2 --load gnome-terminal-conf.xml
 
 * Create links to the files you want using the following command:
-  > ln -s **<path-to-repo/filename>** **<~/filename>**
+  > ln -s *\<path_to_repo/filename\>* *\<~/filename\>*
