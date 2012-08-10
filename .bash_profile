@@ -9,6 +9,11 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# Add brew bash completion for OS X
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
 # Git branch parser
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -118,3 +123,5 @@ if [ `uname -s` == "Darwin" ]; then
     export CLICOLOR=1;
     export LSCOLORS=exfxcxdxbxegedabagacad;
 fi
+
+source ~/git-completion.bash
