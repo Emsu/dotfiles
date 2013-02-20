@@ -70,8 +70,16 @@ xterm*|rxvt*)
     ;;
 esac
 
+# MacOSX stuff
+# Homebrew
+if [ `uname -s` == "Darwin" ]; then
+    export CLICOLOR=1;
+    export LSCOLORS=exfxcxdxbxegedabagacad;
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
+
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [ -x `which dircolors` ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
@@ -84,15 +92,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# set editor to vim
-export EDITOR=vim
-
-# set file/folder colors in Mac OSX
-if [ `uname -s` == "Darwin" ]; then
-    export CLICOLOR=1;
-    export LSCOLORS=exfxcxdxbxegedabagacad;
-fi
-
+export CLICOLOR=1
 
 # Files to enable bash completion
 BASH_COMPLETION_FILES=(`ls ~/bash_completion.d/*`)
@@ -127,4 +127,7 @@ done
 # }}}
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export CHEF_USER=emsu
+
+# set editor to vim
+export EDITOR=vim
+set -o vi
