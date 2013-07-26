@@ -1,0 +1,1 @@
+/Users/msu/DevOps/rerun/etc/bash_completion.sh
