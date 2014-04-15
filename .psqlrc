@@ -1,10 +1,11 @@
-\pset expanded auto
+\set QUIET 1
 \timing
-\encoding unicode
-\set PROMPT1 '%[%033[00;36m%]%n:%[%033[00;35m%]%~ \n%[%033[00;33m%]%R%#%[%033[0m%] '
-\set PROMPT2 '%R%# '
-\set HISTFILE ~/.psql_history- :HOST - :DBNAME
-\pset border 2
-\pset format wrapped
-\pset linestyle unicode
-\pset null null
+\set ON_ERROR_ROLLBACK interactive
+\set VERBOSITY verbose
+\x auto
+\set PROMPT1 '%[%033[1m%]%M/%/%R%[%033[0m%]%# '
+\set PROMPT2 ''
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+\pset null [null]
+\unset QUIET
