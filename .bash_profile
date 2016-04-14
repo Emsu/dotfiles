@@ -130,10 +130,3 @@ done
 
 # set editor to vim
 export EDITOR=vim
-
-# DevOps
-
-## Rerun
-export PATH=$PATH:$HOME/DevOps/rerun
-export RERUN_MODULES=$HOME/DevOps/rerun/modules
-export RERUN_COLOR=true
