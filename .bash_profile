@@ -79,7 +79,7 @@ if [ `uname -s` == "Darwin" ]; then
 fi
 
 # enable color support of ls and also add handy aliases
-if [ -x `which dircolors` ]; then
+if [ -x "$(command -v dircolors)" ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
@@ -116,17 +116,6 @@ do
         . $file
     fi
 done
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # set editor to vim
 export EDITOR=vim
