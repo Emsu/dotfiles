@@ -74,8 +74,8 @@ esac
 # Homebrew
 if [ `uname -s` == "Darwin" ]; then
     export CLICOLOR=1;
-    export LSCOLORS=exfxcxdxbxegedabagacad;
-    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    # export LSCOLORS=exfxcxdxbxegedabagacad;
+    export LSCOLORS=GxFxCxDxBxegedabagaced;
 fi
 
 # enable color support of ls and also add handy aliases
@@ -119,3 +119,14 @@ done
 
 # set editor to vim
 export EDITOR=vim
+
+# For python installed via python.org's Mac installer
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH";
+export PATH="~/google-cloud-sdk/bin:$PATH";
+
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
