@@ -5,4 +5,6 @@ zdharma-continuum/fast-syntax-highlighting
 getantidote/use-omz        # handle OMZ dependencies
 ohmyzsh/ohmyzsh path:lib   # load OMZ's library
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages  # load OMZ plugins
-ohmyzsh/ohmyzsh path:plugins/magic-enter
+ohmyzsh/ohmyzsh path:plugins/1password
+ohmyzsh/ohmyzsh path:plugins/aliases
+ohmyzsh/ohmyzsh path:plugins/git
