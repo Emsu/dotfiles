@@ -17,7 +17,7 @@ eval "$(pixi completion --shell zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Source local config
-source $HOME/.zsh_extra.zsh
+source $HOME/.zsh_extra
 
 # Added for Golang
 export PATH="$PATH:$(go env GOPATH)/bin"
