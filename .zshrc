@@ -10,7 +10,7 @@ source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
 # pixi - python package manager
-export PATH=/Users/msu/.pixi/bin:$PATH
+export PATH=$HOME/.pixi/bin:$PATH
 eval "$(pixi completion --shell zsh)"
 
 # Homebrew
