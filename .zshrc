@@ -1,7 +1,7 @@
 # oh-my-zsh config
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_THEME=
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # setup antidote - zsh package manager
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
