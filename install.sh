@@ -46,6 +46,11 @@ if ! command -v mise > /dev/null 2>&1; then
     brew install zoxide
 fi
 
+if ! command -v delta > /dev/null 2>&1; then
+    echo "Installing git-delta..."
+    brew install git-delta
+fi
+
 stow .
 
 # check gitconfig is setup
@@ -57,4 +62,12 @@ if [ -z "$(git config --global user.name)" ] || [ -z "$(git config --global user
     echo -n "Enter your email: " && read git_email
     git config --global user.name "$git_name"
     git config --global user.email "$git_email"
+fi
+
+if [ -z "$(git config --global core.pager)" ]; then
+    echo "Setting up the diff pager..."
+    git config --global core.pager delta
+    git config --global interactive.diffFilter 'delta --color-only'
+    git config --global delta.navigate true
+    git config --global merge.conflictStyle zdiff3
 fi
