@@ -1,1 +1,5 @@
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
+
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+keybind = shift+enter=text:\x1b\r

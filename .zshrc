@@ -27,6 +27,10 @@ alias vim="nvim"
 alias vi="nvim"
 export EDITOR=vi
 
+# Support CSI codes for move word
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
+
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
 ##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
 
@@ -59,4 +63,39 @@ export WASMER_DIR="/Users/msu/.wasmer"
 
 # Wasmer completions
 fpath=(/Users/msu/.zsh/completions /opt/homebrew/share/zsh/site-functions /Users/msu/.cache/zsh/completions /opt/homebrew/Cellar/antidote/1.9.7/share/antidote/functions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Applications/OrbStack.app/Contents/MacOS/../Resources/completions/zsh /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-jirutka-SLASH-zsh-shift-select /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-zdharma-continuum-SLASH-fast-syntax-highlighting /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-getantidote-SLASH-use-omz /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/lib /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/colored-man-pages /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/1password /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/aliases /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/git /Users/msu/Library/Caches/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/magic-enter)
+
+# Koyeb completion (run manually when updating koyeb: koyeb completion zsh > "${fpath[1]}/_koyeb")
+
 autoload -Uz compinit && compinit -i
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/msu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/msu/google-cloud-sdk/path.zsh.inc'; fi
+
+# Doppler completions
+source <(doppler completion 2> /dev/null)
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/msu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/msu/google-cloud-sdk/completion.zsh.inc'; fi
+alias claude="/Users/msu/.claude/local/claude"
+
+# export CLAUDE_CODE_USE_VERTEX=1
+# export CLOUD_ML_REGION=us-east5
+# export ANTHROPIC_VERTEX_PROJECT_ID=reevo-gemini
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/msu/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/msu/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/Users/msu/.bun/_bun" ] && source "/Users/msu/.bun/_bun"
+source <(COMPLETE=zsh fda)
+export PATH="$PATH:/Users/msu/.local/bin"
+
+source <(talosctl completion zsh)
+
+. "$HOME/.bruin/env"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+HISTORY_IGNORE="(doppler secrets set*)"
