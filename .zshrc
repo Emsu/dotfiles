@@ -76,7 +76,6 @@ source <(doppler completion 2> /dev/null)
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/msu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/msu/google-cloud-sdk/completion.zsh.inc'; fi
-alias claude="/Users/msu/.claude/local/claude"
 
 # export CLAUDE_CODE_USE_VERTEX=1
 # export CLOUD_ML_REGION=us-east5
@@ -99,3 +98,6 @@ source <(talosctl completion zsh)
 . "$HOME/.bruin/env"
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 HISTORY_IGNORE="(doppler secrets set*)"
+
+export PATH=$PATH:$HOME/.maestro/bin
+export PATH="/Users/msu/.bun/bin:$PATH"
